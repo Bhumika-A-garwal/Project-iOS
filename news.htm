@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+
+function clickCounter() {
+  if(typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+</script>
+  
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.box{
+background-color: red;
+background-position: center top;
+background-size: auto;
+<!--background-origin: padding-box;-->
+
+}
+
+.header {
+  overflow: hidden;
+  background-color: black;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+.container
+{
+
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="#default" class="logo">News App</a>
+  <div class="header-right">
+    <a href="#Sign in">Sign in</a>
+    <a class="active" href="#home">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+</div>
+
+<div class="container">
+  <button type="button" class="btn btn-primary">India Bussiness</button>
+  <button type="button" class="btn btn-primary">International Business</button>
+  <button type="button" class="btn btn-primary">Sensex</button>
+  <button type="button" class="btn btn-primary">GST</button>
+  <button type="button" class="btn btn-primary">Budget</button>
+  <button type="button" class="btn btn-primary">Pan Card</button>
+  <button type="button" class="btn btn-primary">Addhar Card</button>
+</div>
+
+
+<br>
+
+<h1>Business news</h1>
+<hr>
+<a href="kerala.htm">Kerala No. 1 in country in active cases</a>
+<p><button onclick="clickCounter()" type="button">Like</button></p>
+<div id="result"></div>
+<hr>
+<a href="Covid.htm">Covid vaccine: India looking at all options</a>
+<hr>
+<a href="Hatras.htm">Supreme Court says Hathras case 'shocking', 'horrible': Key Points</a>
+<hr>
+</body>
+</html>
